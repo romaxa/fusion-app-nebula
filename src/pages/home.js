@@ -1,6 +1,8 @@
 // @flow
 import React from 'react';
 import {styled} from 'fusion-plugin-styletron-react';
+import { InteractiveMap } from 'react-map-gl';
+import { Nebula } from 'nebula.gl-react';
 
 const Center = styled('div', {
   fontFamily: 'HelveticaNeue-Light, Arial',
@@ -67,6 +69,9 @@ const Home = () => (
           </GettingStartedLink>
         </Circle>
       </Center>
+      <Nebula ref={nebula => nebula} viewport={{width: 800, height: 600}} layers={[]}>
+        <InteractiveMap />
+      </Nebula>
     </Center>
   </FullHeightDiv>
 );
