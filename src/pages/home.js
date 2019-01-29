@@ -1,8 +1,10 @@
 // @flow
 import React from 'react';
 import {styled} from 'fusion-plugin-styletron-react';
-import { InteractiveMap } from 'react-map-gl';
+import { StaticMap } from 'react-map-gl';
 import { Nebula } from 'nebula.gl-react';
+import DeckGL from 'deck.gl';
+import RasterTileStyle from 'raster-tile-style';
 
 const Center = styled('div', {
   fontFamily: 'HelveticaNeue-Light, Arial',
@@ -48,7 +50,9 @@ const GettingStartedLink = styled('a', {
   height: '100%',
 });
 
-const Home = () => (
+const Home = () => {
+  const viewport = {width: 800, height: 600,  latitude: 37.7749, longitude: -122.4194, zoom: 17};
+  return (
   <FullHeightDiv>
     <style>
       {`
@@ -69,11 +73,22 @@ const Home = () => (
           </GettingStartedLink>
         </Circle>
       </Center>
-      <Nebula ref={nebula => nebula} viewport={{width: 800, height: 600}} layers={[]}>
-        <InteractiveMap />
+      {/* Does not work with Nebula */}
+      <Nebula ref={nebula => nebula}
+              initialViewState={viewport}
+              viewport={viewport}
+              layers={[]}>
+        <StaticMap mapStyle={RasterTileStyle(['https://a.tile.openstreetmap.org/{z}/{x}/{y}.png'])} />
       </Nebula>
+      {/* Working with DeckGL */}
+      {/* <DeckGL ref={nebula => nebula}
+              initialViewState={viewport}
+              viewport={viewport}
+              layers={[]}>
+        <StaticMap mapStyle={RasterTileStyle(['https://a.tile.openstreetmap.org/{z}/{x}/{y}.png'])} />
+      </DeckGL> */}
     </Center>
   </FullHeightDiv>
-);
+)};
 
 export default Home;

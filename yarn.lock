@@ -7168,6 +7168,11 @@ range-parser@^1.2.0, range-parser@~1.2.0:
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.0.tgz#f49be6b487894ddc40dcc94a322f611092e00d5e"
   integrity sha1-9JvmtIeJTdxA3MlKMi9hEJLgDV4=
 
+raster-tile-style@^1.0.1:
+  version "1.0.1"
+  resolved "https://unpm.uberinternal.com/raster-tile-style/-/raster-tile-style-1.0.1.tgz#8ab82bfb4c488cef16734725b08ae377aa3870ba"
+  integrity sha1-irgr+0xIjO8Wc0clsIrjd6o4cLo=
+
 raw-body@2.3.3, raw-body@^2.3.3:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/raw-body/-/raw-body-2.3.3.tgz#1b324ece6b5706e153855bc1148c65bb7f6ea0c3"

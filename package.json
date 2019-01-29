@@ -12,6 +12,7 @@
     "fusion-tokens": "^1.1.1",
     "nebula.gl-react": "^0.8.0",
     "prop-types": "^15.6.2",
+    "raster-tile-style": "^1.0.1",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-map-gl": "^4.0.10",
